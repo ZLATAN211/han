@@ -8,6 +8,8 @@ import com.easy.han.entity.Order;
 import com.easy.han.entity.CommodityAttributes;
 import com.easy.han.entity.Bottle;
 import com.easy.han.entity.Water;
+import com.easy.han.handler.MqttPublisher;
+import com.easy.han.handler.MqttSubscriber;
 
 /**
  * @author zhaohan
@@ -34,24 +36,40 @@ public class Implementer implements Callable {
     @Override
     public String[] call() throws Exception {
 
-        Order order= JSON.parseObject(json,Order.class);
-        int o_id=order.getO_id();
-        String s_vals=order.getS_vals();
-        CommodityAttributes attributes= JSON.parseObject(s_vals,CommodityAttributes.class);
+        if (){
 
-        short capacity=attributes.getCapacity();
-        int num=attributes.getNum();
-        Bottle bottle=new Bottle(o_id,capacity,num);
-        String bottleTask=(String)JSON.toJSON(bottle);
+            while (){
 
-        String type=attributes.getType();
-        long total=attributes.getTotal();
-        Water water=new Water(o_id,type,total);
-        String waterTask=(String)JSON.toJSON(water);
+            }
+
+        }else {
+            Order order = JSON.parseObject(json, Order.class);
+            int o_id = order.getO_id();
+            String s_vals = order.getS_vals();
+            CommodityAttributes attributes = JSON.parseObject(s_vals, CommodityAttributes.class);
+
+            short capacity = attributes.getCapacity();
+            int num = attributes.getNum();
+            Bottle bottle = new Bottle(o_id, capacity, num);
+            String bottleTask = (String) JSON.toJSON(bottle);
+
+            String type = attributes.getType();
+            long total = attributes.getTotal();
+            Water water = new Water(o_id, type, total);
+            String waterTask = (String) JSON.toJSON(water);
+        }
 
         String[] task={bottleTask,waterTask};
 
         return task;
+
+    }
+
+    public static String ack() throws Exception {
+
+        MqttPublisher.publish("ack");
+        String order=MqttSubscriber.subscriber();
+        return order;
 
     }
 
