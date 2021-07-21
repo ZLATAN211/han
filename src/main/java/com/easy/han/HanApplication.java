@@ -11,7 +11,6 @@ public class HanApplication {
     public static void main(String[] args) throws Exception{
         SpringApplication.run(HanApplication.class, args);
         MqttPublisher.publisher(MqttSubscriber.subscriber());
-
     }
 
 }
