@@ -1,4 +1,4 @@
-package com.easy.han.handler;
+package mesanalysis.demo.handler;
 
 import org.fusesource.mqtt.client.*;
 
@@ -31,5 +31,4 @@ public class MqttSubscriber {
     }
 
 }
-
 

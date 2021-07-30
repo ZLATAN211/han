@@ -1,4 +1,4 @@
-package com.easy.han.entity;
+package mesanalysis.demo.entity;
 
 import lombok.Data;
 
@@ -12,12 +12,16 @@ import java.util.Date;
 @Data
 public class Order implements Serializable {
 
-    private static final long serialVersionUID = 5251605847558162389L;
+    private static final long serialVersionUID = 6251615847558162389L;
 
     /**
      * 商品名称(需要)
      */
     private String c_Name;
+    /**
+     * 预计生产时间
+     */
+    private int productionTime;
     /**
      * 订单id(需要)
      */
@@ -85,4 +89,3 @@ public class Order implements Serializable {
     private String s_vals;
 
 }
-
