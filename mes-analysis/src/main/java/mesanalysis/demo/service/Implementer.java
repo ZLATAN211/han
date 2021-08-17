@@ -71,9 +71,11 @@ public class Implementer implements Callable {
     }
 
     public static String ack(String type) throws Exception {
+
         MqttPublisher.publish(type);
         String returns= MqttSubscriber.subscriber();
         return returns;
+
     }
 
 }
