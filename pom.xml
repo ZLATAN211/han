@@ -15,7 +15,15 @@
     <description>Demo project for Spring Boot</description>
 
     <modules>
+        <module>common</module>
         <module>mes-analysis</module>
+        <module>mes-alisms</module>
+        <module>mes-assemblyline</module>
+        <module>mes-files-receive</module>
+        <module>mes-login</module>
+        <module>mes-machinelogin</module>
+        <module>mes-order</module>
+        <module>mes-verification</module>
     </modules>
 
     <properties>
