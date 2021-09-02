@@ -18,6 +18,5 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/order/cu-order-info")
 public class CuOrderInfoController {
 
-
 }
 

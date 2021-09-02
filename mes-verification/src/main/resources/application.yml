@@ -8,9 +8,8 @@ datasource:
 spring:
   #服务名字，整合用
   application:
-    name: mes-assemblyline
+    name: mes-verification
 fastjson:
   date-format: yyyy-MM-dd HH:mm:ss
   time-zone: GMT+8
-
 

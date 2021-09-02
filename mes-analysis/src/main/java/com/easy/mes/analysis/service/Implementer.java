@@ -4,7 +4,6 @@ import com.alibaba.fastjson.JSON;
 import com.easy.mes.analysis.entity.*;
 import com.easy.mes.analysis.handler.MqttPublisher;
 import com.easy.mes.analysis.handler.MqttSubscriber;
-import mesanalysis.demo.entity.*;
 
 import java.util.ArrayList;
 import java.util.List;

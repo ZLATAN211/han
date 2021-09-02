@@ -32,30 +32,57 @@ public class CuOrderInfo implements Serializable {
     @TableId(value = "id", type = IdType.ASSIGN_ID)
     private Long id;
 
+    /**
+     * 订单id
+     */
     private Long orderId;
-
+    /**
+     * 公司id
+     */
     private Long coId;
-
+    /**
+     * 公司名
+     */
     private String coName;
-
+    /**
+     * 客服部电话
+     */
     private String csdTel;
-
+    /**
+     * 商品id
+     */
     private Long pId;
-
+    /**
+     * 商品图片存储地址
+     */
     private String pAddr;
-
+    /**
+     * 型号选择
+     */
     private String pTypeChoose;
-
+    /**
+     * 产品形态
+     */
     private String ptype;
-
+    /**
+     * 包装方式
+     */
     private String packMethod;
-
+    /**
+     * 包装规格
+     */
     private String packSp;
-
+    /**
+     * 用料方式
+     */
     private Integer materialUsage;
-
+    /**
+     * 商品购买数量
+     */
     private Long totalQuantity;
-
+    /**
+     * 商品总金额
+     */
     private BigDecimal totalAmount;
 
     @TableField(fill = FieldFill.INSERT)
