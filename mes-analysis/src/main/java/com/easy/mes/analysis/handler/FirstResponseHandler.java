@@ -4,24 +4,27 @@ import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
-
 import java.util.logging.Logger;
 
-public class TimeClientHandler extends ChannelInboundHandlerAdapter {
+/**
+ * @author zhaohan
+ * @date 2021-10-02
+ */
+
+public class FirstResponseHandler extends ChannelInboundHandlerAdapter {
 
     private static final Logger logger = Logger
-            .getLogger(TimeClientHandler.class.getName());
+            .getLogger(FirstResponseHandler.class.getName());
 
     private final ByteBuf firstMessage;
 
     /**
      * Creates a client-side handler.
      */
-    public TimeClientHandler() {
-        byte[] req = "QUERY TIME ORDER".getBytes();
+    public FirstResponseHandler() {
+        byte[] req = "ACK".getBytes();
         firstMessage = Unpooled.buffer(req.length);
         firstMessage.writeBytes(req);
-
     }
 
     @Override
@@ -46,4 +49,5 @@ public class TimeClientHandler extends ChannelInboundHandlerAdapter {
                 + cause.getMessage());
         ctx.close();
     }
+
 }

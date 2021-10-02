@@ -17,7 +17,7 @@ public class MqttSubscriber {
         mqtt.setHost(MQTT_SERVER_URL, 1883);
         BlockingConnection connection = mqtt.blockingConnection();
         connection.connect();
-        Topic[] topics = {new Topic("Java_Test", QoS.AT_LEAST_ONCE)};
+        Topic[] topics = {new Topic("TaskPool", QoS.AT_LEAST_ONCE)};
         byte[] qoses = connection.subscribe(topics);
         Message message = connection.receive();
 //        System.out.println(message.getTopic());
