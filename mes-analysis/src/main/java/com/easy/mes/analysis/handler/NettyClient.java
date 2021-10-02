@@ -8,7 +8,14 @@ import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
+import org.springframework.stereotype.Component;
 
+/**
+ * @author zhaohan
+ * @date 2021-10-2
+ */
+
+@Component
 public class NettyClient {
 
     public void connect(int port, String host) throws Exception {
@@ -35,10 +42,5 @@ public class NettyClient {
             // 优雅退出，释放NIO线程组
             group.shutdownGracefully();
         }
-    }
-
-    public static void main(String[] args) throws Exception {
-
-        new NettyClient().connect(8080, "127.0.0.1");
     }
 }
