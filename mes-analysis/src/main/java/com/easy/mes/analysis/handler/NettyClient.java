@@ -18,9 +18,13 @@ import org.springframework.stereotype.Component;
 @Component
 public class NettyClient {
 
+    /**
+     * 配置客户端NIO线程组
+     */
+    EventLoopGroup group = new NioEventLoopGroup();
+
     public void connect(int port, String host) throws Exception {
-        // 配置客户端NIO线程组
-        EventLoopGroup group = new NioEventLoopGroup();
+
         try {
             Bootstrap b = new Bootstrap();
             b.group(group).channel(NioSocketChannel.class)
@@ -36,11 +40,14 @@ public class NettyClient {
             // 发起异步连接操作
             ChannelFuture f = b.connect(host, port).sync();
 
-            // 当代客户端链路关闭
+            // 当客户端链路关闭
             f.channel().closeFuture().sync();
         } finally {
+            //netty断线重连
+            connect(port,host);
             // 优雅退出，释放NIO线程组
             group.shutdownGracefully();
         }
     }
 }
+

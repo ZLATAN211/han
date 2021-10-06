@@ -4,10 +4,13 @@ import com.alibaba.fastjson.JSON;
 import com.easy.mes.analysis.entity.*;
 import com.easy.mes.analysis.handler.MqttPublisher;
 import com.easy.mes.analysis.handler.MqttSubscriber;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Callable;
+
+/**
+ * @author zhaohan
+ */
 
 public class Implementer implements Callable {
 
@@ -58,12 +61,8 @@ public class Implementer implements Callable {
                 bot.add(json);
 
             }
-
         }
-
-
         return null;
-
     }
 
     public static String ack(String type) throws Exception {
